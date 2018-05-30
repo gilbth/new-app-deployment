@@ -5,4 +5,5 @@ ADD known_hosts /root/.ssh/known_hosts
 RUN chmod 644 /root/.ssh/known_hosts  &&  chmod 600 /root/.ssh/id_rsa && apt-get update
 RUN apt-get install -y git
 RUN git  clone  git@github.com:gilbth/my_new_app.git
-CMD /my_new_app/entrypoint.sh
+COPY entrypoint.sh /entrypoint.sh
+CMD /entrypoint.sh
